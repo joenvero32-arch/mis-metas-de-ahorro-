@@ -1,0 +1,10 @@
+{
+  "name": "Mis metas de ahorro",
+  "short_name": "Mi Ahorro",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8f5",
+  "theme_color": "#123c32",
+  "description": "Organiza tus metas y aportes de ahorro.",
+  "icons": []
+}
