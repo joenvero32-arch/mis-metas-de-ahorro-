@@ -12,11 +12,11 @@
 <div class="card"><div class="row between"><h2>Mis metas</h2><button class="secondary" id="refresh">Actualizar</button></div><div id="goals"></div></div></section>
 <p class="muted" style="text-align:center;margin-top:28px">Tus datos están protegidos por tu cuenta. No compartas tu contraseña.</p>
 </main><script>
-const URL='https://thbpburglgxtltesougc.supabase.co';
+const SUPABASE_URL='https://thbpburglgxtltesougc.supabase.co';
 const KEY='sb_publishable_AHS4lMUJE896SeVFjlgRfw_vRpUYQj8';
 let db=null,user=null,goals=[];
 const authMessage=document.getElementById('authmsg');
-if(window.supabase&&typeof window.supabase.createClient==='function'){db=window.supabase.createClient(URL,KEY)}else{authMessage.textContent='No se pudo cargar el servicio de conexión. Verifica internet y recarga la página.';document.getElementById('signup').disabled=true;document.getElementById('signin').disabled=true;}
+if(window.supabase&&typeof window.supabase.createClient==='function'){db=window.supabase.createClient(SUPABASE_URL,KEY)}else{authMessage.textContent='No se pudo cargar el servicio de conexión. Verifica internet y recarga la página.';document.getElementById('signup').disabled=true;document.getElementById('signin').disabled=true;}
 const $=id=>document.getElementById(id), money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(Number(n)||0);
 function msg(id,t){$(id).textContent=t}
 async function session(){if(!db)return;try{const {data:{session}}=await db.auth.getSession();user=session?.user||null;show();if(user)load()}catch(e){msg('authmsg','No se pudo iniciar la conexión: '+e.message)}}
