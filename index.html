@@ -64,9 +64,31 @@ button:active{transform:translateY(1px)}button.secondary{background:#203b2a!impo
 #auth .panel{background:#102319}
 footer{color:#92a495!important}
 @media(max-width:560px){.shell{padding:12px 12px 40px}.hero{min-height:220px;padding:30px 23px;border-radius:24px}.hero h1{font-size:35px}.panel{padding:20px;border-radius:22px}.stats{gap:8px}.stat{min-height:106px;padding:14px 11px;border-radius:17px}.stat span{font-size:9px;letter-spacing:.06em}.stat strong{font-size:21px}.goal{padding:17px;border-radius:20px}.daily-plan{padding:17px}.logo{width:51px;height:51px}}
+
+/* Paletas premium completas: todos los componentes siguen el color elegido */
+:root{--theme-deep:#071421;--theme-mid:#102b45;--theme-accent:#397fbd;--theme-light:#a9d4f5;--theme-soft:#173650;--theme-border:#315a78}
+body{background:radial-gradient(ellipse at 50% -15%,var(--theme-mid) 0%,var(--theme-deep) 54%,#050807 100%)!important;color:#f5f0e6!important}
+.hero{background:linear-gradient(130deg,var(--theme-deep),var(--theme-mid) 68%,var(--theme-accent))!important;box-shadow:0 18px 44px var(--theme-shadow)!important}
+.panel,.stat,.goal{background:linear-gradient(145deg,var(--theme-mid),var(--theme-deep))!important;border-color:var(--theme-border)!important;box-shadow:0 14px 36px #0005!important;color:#f5f0e6!important}
+h2,.brand,.stat strong,.daily-title{color:var(--theme-light)!important}
+.muted,.tagline,.stat span{color:#b9c4bf!important}
+.goalhead b{background:var(--theme-soft)!important;border-color:var(--theme-border)!important;color:var(--theme-light)!important}
+.bar{background:var(--theme-soft)!important}
+.bar i{background:linear-gradient(90deg,var(--theme-accent),#e6c36d)!important;box-shadow:0 0 16px var(--theme-shadow)!important}
+.daily-plan{background:linear-gradient(135deg,var(--theme-mid),var(--theme-deep) 75%)!important;border-color:var(--theme-border)!important}
+.daily-amount{color:var(--theme-light)!important}
+input,select,.day-cell{background:var(--theme-deep)!important;color:#f7f1e7!important;border-color:var(--theme-border)!important}
+input:focus,select:focus{border-color:var(--theme-light)!important;box-shadow:0 0 0 4px var(--theme-shadow)!important}
+button:not(.secondary):not(.gold):not(.danger):not(.swatch){background:linear-gradient(120deg,var(--theme-accent),var(--theme-light))!important;color:var(--theme-deep)!important}
+button.secondary,.day-cell.saved{background:var(--theme-soft)!important;color:var(--theme-light)!important;border-color:var(--theme-border)!important}
+button.gold{background:linear-gradient(135deg,#f5e8c7,#d9b968)!important;color:#382a11!important}
+.day-cell{border-color:var(--theme-border)!important}.day-cell.saved{background:var(--theme-soft)!important}
+.daily-wrap{border-color:var(--theme-border)!important}.daily-title{color:var(--theme-light)!important}
+.theme-row .swatch{outline-color:var(--theme-border)!important}
+footer{color:#a9b8ae!important}
 </style></head><body><main class="shell">
 <header><div class="identity"><img class="logo" src="./logo-mis-metas.svg" alt="Mis Metas de Ahorro"><div><div class="brand">MIS METAS DE AHORRO</div><div class="tagline">Construye hoy la tranquilidad de mañana.</div></div></div><div class="topactions"><button class="secondary" id="openSettings" type="button">Colores</button><button class="secondary hidden" id="logout" type="button">Salir</button></div></header>
-<section id="settings" class="panel hidden"><div class="goalhead"><h2>Apariencia</h2><button class="secondary" id="closeSettings" type="button">Cerrar</button></div><p class="muted">Elige una paleta o personaliza tu color principal.</p><div class="theme-row"><button class="swatch" style="background:#2864a0" data-color="#2864a0" aria-label="Azul"></button><button class="swatch" style="background:#247456" data-color="#247456" aria-label="Verde"></button><button class="swatch" style="background:#7652a5" data-color="#7652a5" aria-label="Morado"></button><button class="swatch" style="background:#263238" data-color="#263238" aria-label="Oscuro"></button><button class="swatch" style="background:#ad8735" data-color="#ad8735" aria-label="Dorado"></button><input id="customColor" class="custom" type="color" value="#2864a0" aria-label="Color personalizado"></div><p id="themeMsg" class="muted"></p><div class="daily-wrap"><div class="daily-title">Recordatorio diario de ahorro</div><p class="muted">Elige una hora para recibir el aviso cuando tengas la aplicación abierta.</p><div class="reminder-row"><label style="display:flex;align-items:center;gap:7px;margin:0"><input id="reminderEnabled" type="checkbox" style="width:auto"> Activar recordatorio</label><input id="reminderTime" type="time" value="19:00"><button id="saveReminder" type="button">Guardar recordatorio</button></div><p id="reminderMsg" class="muted"></p></div></section>
+<section id="settings" class="panel hidden"><div class="goalhead"><h2>Apariencia</h2><button class="secondary" id="closeSettings" type="button">Cerrar</button></div><p class="muted">Elige una paleta o personaliza tu color principal.</p><div class="theme-row"><button class="swatch" style="background:#2864a0" data-color="#2864a0" aria-label="Azul"></button><button class="swatch" style="background:#247456" data-color="#247456" aria-label="Verde"></button><button class="swatch" style="background:#7652a5" data-color="#7652a5" aria-label="Morado"></button><button class="swatch" style="background:#263238" data-color="#263238" aria-label="Oscuro"></button><button class="swatch" style="background:#ad8735" data-color="#ad8735" aria-label="Dorado"></button><button class="swatch" style="background:#d45b91" data-color="#d45b91" aria-label="Rosado"></button><input id="customColor" class="custom" type="color" value="#2864a0" aria-label="Color personalizado"></div><p id="themeMsg" class="muted"></p><div class="daily-wrap"><div class="daily-title">Recordatorio diario de ahorro</div><p class="muted">Elige una hora para recibir el aviso cuando tengas la aplicación abierta.</p><div class="reminder-row"><label style="display:flex;align-items:center;gap:7px;margin:0"><input id="reminderEnabled" type="checkbox" style="width:auto"> Activar recordatorio</label><input id="reminderTime" type="time" value="19:00"><button id="saveReminder" type="button">Guardar recordatorio</button></div><p id="reminderMsg" class="muted"></p></div></section>
 <section class="hero"><div class="eyebrow">TU FUTURO, CONSTRUIDO PASO A PASO</div><h1>Los grandes logros comienzan con pequeños ahorros.</h1><p>Define tus metas, registra cada aporte y observa tu progreso.</p></section>
 <section id="auth" class="panel"><h2>Bienvenido</h2><p class="muted">Ingresa para mantener tus metas sincronizadas y seguras.</p><div class="field"><label for="email">Correo electrónico</label><input id="email" type="email" autocomplete="username" placeholder="tu correo"></div><div class="field"><label for="password">Contraseña</label><input id="password" type="password" autocomplete="current-password" placeholder="Tu contraseña"></div><div class="actions"><button id="signin" type="button">Iniciar sesión</button><button id="signup" class="secondary" type="button">Crear cuenta</button><button id="reset" class="gold" type="button">Recuperar contraseña</button></div><p id="authmsg" class="message" aria-live="polite"></p></section>
 <section id="app" class="hidden"><div class="stats"><div class="stat"><span>Total ahorrado</span><strong id="total">$0</strong></div><div class="stat"><span>Metas activas</span><strong id="count">0</strong></div><div class="stat"><span>Avance global</span><strong id="progress">0%</strong></div></div>
@@ -83,23 +105,18 @@ let db=null,user=null,goals=[];
 const money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(Number(n)||0);
 const say=(id,t)=>$(id).textContent=t;
 function theme(hex){
-const palettes={
-'#2864a0':{navy:'#142c4e',blue:'#2864a0',gold:'#c5a45d',paper:'#f4f6fa',soft:'#eaf0f8'},
-'#247456':{navy:'#174b3a',blue:'#247456',gold:'#b8a36a',paper:'#f2f7f4',soft:'#e4f1e9'},
-'#7652a5':{navy:'#392653',blue:'#7652a5',gold:'#c5a45d',paper:'#f7f4fa',soft:'#eee8f6'},
-'#263238':{navy:'#182326',blue:'#263238',gold:'#c5a45d',paper:'#f2f4f4',soft:'#e5e9e9'},
-'#ad8735':{navy:'#59451d',blue:'#ad8735',gold:'#d3b66e',paper:'#faf7ef',soft:'#f2ead5'}
+const presets={
+'#2864a0':{deep:'#071421',mid:'#102b45',accent:'#397fbd',light:'#a9d4f5',soft:'#173650',border:'#315a78'},
+'#247456':{deep:'#06140f',mid:'#10291e',accent:'#318a66',light:'#a8e0c4',soft:'#183b2b',border:'#37694f'},
+'#7652a5':{deep:'#100b19',mid:'#261735',accent:'#895fc0',light:'#d6b9f4',soft:'#39254e',border:'#654783'},
+'#263238':{deep:'#080d0f',mid:'#182326',accent:'#607d86',light:'#c2d5d9',soft:'#26383d',border:'#4a6269'},
+'#ad8735':{deep:'#151006',mid:'#30230d',accent:'#b58a32',light:'#f0d58d',soft:'#473517',border:'#765b27'},
+'#d45b91':{deep:'#180b13',mid:'#351526',accent:'#d45b91',light:'#ffc0dc',soft:'#4a2037',border:'#87405f'}
 };
-const p=palettes[hex]||{navy:shade(hex,.72),blue:hex,gold:'#c5a45d',paper:'#f7f8fa',soft:'#e9eef5'};
+const p=presets[hex]||{deep:shade(hex,.16),mid:shade(hex,.30),accent:hex,light:shade(hex,.78),soft:shade(hex,.25),border:shade(hex,.48)};
 const root=document.documentElement;
-Object.entries(p).forEach(([k,v])=>root.style.setProperty('--'+k,v));
-root.style.setProperty('--shadow','0 12px 35px '+p.navy+'18');
-const hero=document.querySelector('.hero');
-if(hero)hero.style.background='linear-gradient(130deg,'+p.navy+','+p.blue+' 72%, '+shade(p.blue,.22)+')';
-document.querySelectorAll('h2,.stat strong,.brand').forEach(el=>el.style.color=p.navy);
-document.querySelectorAll('button:not(.swatch)').forEach(el=>{if(!el.classList.contains('secondary')&&!el.classList.contains('gold')&&!el.classList.contains('danger'))el.style.background=p.blue;});
-document.querySelectorAll('button.secondary').forEach(el=>{el.style.background=p.soft;el.style.color=p.navy;});
-document.querySelectorAll('.bar i').forEach(el=>el.style.background='linear-gradient(90deg,'+p.blue+','+p.gold+')');
+Object.entries(p).forEach(([k,v])=>root.style.setProperty('--theme-'+k,v));
+root.style.setProperty('--theme-shadow','0 18px 48px '+p.accent+'25');
 $('customColor').value=hex;
 try{localStorage.setItem('mm-color',hex)}catch(e){}
 }
