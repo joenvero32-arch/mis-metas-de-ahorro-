@@ -33,7 +33,28 @@ const $=id=>document.getElementById(id);
 let db=null,user=null,goals=[];
 const money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(Number(n)||0);
 const say=(id,t)=>$(id).textContent=t;
-function theme(hex){document.documentElement.style.setProperty('--blue',hex);document.documentElement.style.setProperty('--gold','#c5a45d');$('customColor').value=hex;try{localStorage.setItem('mm-color',hex)}catch(e){}}
+function theme(hex){
+const palettes={
+'#2864a0':{navy:'#142c4e',blue:'#2864a0',gold:'#c5a45d',paper:'#f4f6fa',soft:'#eaf0f8'},
+'#247456':{navy:'#174b3a',blue:'#247456',gold:'#b8a36a',paper:'#f2f7f4',soft:'#e4f1e9'},
+'#7652a5':{navy:'#392653',blue:'#7652a5',gold:'#c5a45d',paper:'#f7f4fa',soft:'#eee8f6'},
+'#263238':{navy:'#182326',blue:'#263238',gold:'#c5a45d',paper:'#f2f4f4',soft:'#e5e9e9'},
+'#ad8735':{navy:'#59451d',blue:'#ad8735',gold:'#d3b66e',paper:'#faf7ef',soft:'#f2ead5'}
+};
+const p=palettes[hex]||{navy:shade(hex,.72),blue:hex,gold:'#c5a45d',paper:'#f7f8fa',soft:'#e9eef5'};
+const root=document.documentElement;
+Object.entries(p).forEach(([k,v])=>root.style.setProperty('--'+k,v));
+root.style.setProperty('--shadow','0 12px 35px '+p.navy+'18');
+const hero=document.querySelector('.hero');
+if(hero)hero.style.background='linear-gradient(130deg,'+p.navy+','+p.blue+' 72%, '+shade(p.blue,.22)+')';
+document.querySelectorAll('h2,.stat strong,.brand').forEach(el=>el.style.color=p.navy);
+document.querySelectorAll('button:not(.swatch)').forEach(el=>{if(!el.classList.contains('secondary')&&!el.classList.contains('gold')&&!el.classList.contains('danger'))el.style.background=p.blue;});
+document.querySelectorAll('button.secondary').forEach(el=>{el.style.background=p.soft;el.style.color=p.navy;});
+document.querySelectorAll('.bar i').forEach(el=>el.style.background='linear-gradient(90deg,'+p.blue+','+p.gold+')');
+$('customColor').value=hex;
+try{localStorage.setItem('mm-color',hex)}catch(e){}
+}
+function shade(hex,amount){const n=parseInt(hex.slice(1),16),r=Math.round(((n>>16)&255)*amount),g=Math.round(((n>>8)&255)*amount),b=Math.round((n&255)*amount);return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');}
 try{theme(localStorage.getItem('mm-color')||'#2864a0')}catch(e){}
 $('openSettings').addEventListener('click',()=>$('settings').classList.toggle('hidden'));
 $('closeSettings').addEventListener('click',()=>$('settings').classList.add('hidden'));
