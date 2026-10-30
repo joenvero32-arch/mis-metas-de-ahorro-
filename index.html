@@ -28,6 +28,50 @@ button{border:0;border-radius:11px;padding:12px 17px;background:var(--blue);colo
 .reminder-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
 .reminder-row input[type=time]{width:auto;min-width:125px}
 @media(max-width:420px){.daily-grid{gap:4px}.day-cell{min-height:42px;font-size:11px}}
+
+/* Premium dashboard refresh */
+body{background:radial-gradient(ellipse at 15% 0%,color-mix(in srgb,var(--gold) 12%,transparent),transparent 36%),var(--paper);letter-spacing:-.01em}
+.shell{max-width:1040px;padding-top:24px}
+header{padding:10px 4px 18px;border-bottom:1px solid color-mix(in srgb,var(--gold) 24%,var(--line));margin-bottom:22px}
+.logo{width:58px;height:58px;border-radius:16px;box-shadow:0 7px 20px #07140f24}
+.brand{font-size:13px;letter-spacing:.19em}
+.tagline{font-size:12px;letter-spacing:.02em}
+.hero{min-height:230px;padding:38px 36px;border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);border-radius:28px;background:linear-gradient(118deg,#0b1d16,#174b3a 62%,#9a722c)!important;box-shadow:0 22px 50px #07140f30}
+.hero:before{content:"";position:absolute;width:300px;height:300px;border:1px solid #f4d98a38;border-radius:50%;right:-70px;bottom:-220px;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff06}
+.hero:after{width:230px;height:230px;right:-90px;top:-120px;border-color:#f4d98a55}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:#f4d98a}
+.hero h1{font-size:clamp(32px,6vw,48px);max-width:650px;text-shadow:0 2px 18px #0003}
+.hero p{font-size:16px;color:#f1ead7;max-width:560px}
+.panel{border:1px solid color-mix(in srgb,var(--gold) 20%,var(--line));border-radius:24px;padding:28px;margin:20px 0;box-shadow:0 14px 38px #101b2510;background:linear-gradient(145deg,#fff,#fffdf8)}
+h2{font-size:23px;letter-spacing:-.025em}
+.stats{gap:14px;margin:22px 0}
+.stat{position:relative;overflow:hidden;min-height:112px;border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line));border-radius:20px;padding:19px;background:linear-gradient(145deg,#fff,#faf6eb);box-shadow:0 10px 25px #1b2b1d0d}
+.stat:after{content:"";position:absolute;width:76px;height:76px;border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);border-radius:50%;right:-25px;bottom:-34px}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.09em;font-weight:750}
+.stat strong{display:block;margin-top:5px;font-size:clamp(23px,4vw,31px);font-weight:850;letter-spacing:-.035em}
+.goal{border:1px solid color-mix(in srgb,var(--gold) 30%,var(--line));border-radius:22px;padding:22px;margin:16px 0;background:linear-gradient(150deg,#fff 55%,#fbf7ed);box-shadow:0 12px 28px #1623190a}
+.goalhead strong{font-size:18px;letter-spacing:-.02em}
+.goalhead b{background:var(--soft);color:var(--navy);border:1px solid color-mix(in srgb,var(--gold) 30%,var(--line));border-radius:999px;padding:6px 12px;font-size:13px}
+.bar{height:12px;background:#e8e5dc;border-radius:99px;margin:16px 0}
+.bar i{border-radius:99px;box-shadow:0 0 12px color-mix(in srgb,var(--gold) 35%,transparent)}
+.daily-plan{padding:20px;border:1px solid color-mix(in srgb,var(--gold) 48%,var(--line));border-radius:20px;background:linear-gradient(145deg,#f8f0dc,#fffaf0)}
+.daily-amount{font-size:clamp(30px,5vw,38px);letter-spacing:-.04em;color:#624817}
+.daily-plan .muted{line-height:1.55}
+input,select{min-height:52px;border-radius:14px;border-color:#d7d6ce;background:#fff}
+input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 17%,transparent)}
+button{border-radius:14px;min-height:46px;font-weight:750;letter-spacing:.005em;box-shadow:0 5px 13px #142c4e10;transition:transform .15s ease,box-shadow .15s ease}
+button:active{transform:translateY(1px)}
+button.secondary{border:1px solid color-mix(in srgb,var(--gold) 28%,var(--line));box-shadow:none}
+button.gold{background:linear-gradient(135deg,#f5e8c7,#ead5a2);color:#5e4517}
+#addgoal{background:linear-gradient(120deg,#173e30,#b28a3b)!important;padding:14px 22px}
+#refresh{background:linear-gradient(135deg,#f6edda,#e9d7ad);color:#654c1e}
+.daily-wrap{margin-top:22px;padding-top:20px}
+.daily-title{font-size:16px;letter-spacing:-.015em}
+.day-cell{border-radius:12px;min-height:55px;border-color:#e2ded2}
+.day-cell.saved{background:#e9f1e9;border-color:#7b9b7d;color:#1d5138}
+@media(max-width:560px){
+ .shell{padding:12px 12px 36px}.hero{min-height:210px;padding:29px 23px;border-radius:23px}.hero h1{font-size:34px}.panel{padding:20px;border-radius:21px}.stats{gap:8px}.stat{min-height:100px;padding:13px 11px;border-radius:16px}.stat span{font-size:10px;letter-spacing:.055em}.stat strong{font-size:21px}.goal{padding:16px;border-radius:19px}.daily-plan{padding:16px}.logo{width:50px;height:50px}
+}
 </style></head><body><main class="shell">
 <header><div class="identity"><img class="logo" src="./logo-mis-metas.svg" alt="Mis Metas de Ahorro"><div><div class="brand">MIS METAS DE AHORRO</div><div class="tagline">Construye hoy la tranquilidad de mañana.</div></div></div><div class="topactions"><button class="secondary" id="openSettings" type="button">Colores</button><button class="secondary hidden" id="logout" type="button">Salir</button></div></header>
 <section id="settings" class="panel hidden"><div class="goalhead"><h2>Apariencia</h2><button class="secondary" id="closeSettings" type="button">Cerrar</button></div><p class="muted">Elige una paleta o personaliza tu color principal.</p><div class="theme-row"><button class="swatch" style="background:#2864a0" data-color="#2864a0" aria-label="Azul"></button><button class="swatch" style="background:#247456" data-color="#247456" aria-label="Verde"></button><button class="swatch" style="background:#7652a5" data-color="#7652a5" aria-label="Morado"></button><button class="swatch" style="background:#263238" data-color="#263238" aria-label="Oscuro"></button><button class="swatch" style="background:#ad8735" data-color="#ad8735" aria-label="Dorado"></button><input id="customColor" class="custom" type="color" value="#2864a0" aria-label="Color personalizado"></div><p id="themeMsg" class="muted"></p><div class="daily-wrap"><div class="daily-title">Recordatorio diario de ahorro</div><p class="muted">Elige una hora para recibir el aviso cuando tengas la aplicación abierta.</p><div class="reminder-row"><label style="display:flex;align-items:center;gap:7px;margin:0"><input id="reminderEnabled" type="checkbox" style="width:auto"> Activar recordatorio</label><input id="reminderTime" type="time" value="19:00"><button id="saveReminder" type="button">Guardar recordatorio</button></div><p id="reminderMsg" class="muted"></p></div></section>
