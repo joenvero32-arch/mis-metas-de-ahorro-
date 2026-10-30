@@ -29,49 +29,41 @@ button{border:0;border-radius:11px;padding:12px 17px;background:var(--blue);colo
 .reminder-row input[type=time]{width:auto;min-width:125px}
 @media(max-width:420px){.daily-grid{gap:4px}.day-cell{min-height:42px;font-size:11px}}
 
-/* Premium dashboard refresh */
-body{background:radial-gradient(ellipse at 15% 0%,color-mix(in srgb,var(--gold) 12%,transparent),transparent 36%),var(--paper);letter-spacing:-.01em}
-.shell{max-width:1040px;padding-top:24px}
-header{padding:10px 4px 18px;border-bottom:1px solid color-mix(in srgb,var(--gold) 24%,var(--line));margin-bottom:22px}
-.logo{width:58px;height:58px;border-radius:16px;box-shadow:0 7px 20px #07140f24}
-.brand{font-size:13px;letter-spacing:.19em}
-.tagline{font-size:12px;letter-spacing:.02em}
-.hero{min-height:230px;padding:38px 36px;border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);border-radius:28px;background:linear-gradient(118deg,#0b1d16,#174b3a 62%,#9a722c)!important;box-shadow:0 22px 50px #07140f30}
-.hero:before{content:"";position:absolute;width:300px;height:300px;border:1px solid #f4d98a38;border-radius:50%;right:-70px;bottom:-220px;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff06}
-.hero:after{width:230px;height:230px;right:-90px;top:-120px;border-color:#f4d98a55}
-.eyebrow{font-size:11px;letter-spacing:.22em;color:#f4d98a}
-.hero h1{font-size:clamp(32px,6vw,48px);max-width:650px;text-shadow:0 2px 18px #0003}
-.hero p{font-size:16px;color:#f1ead7;max-width:560px}
-.panel{border:1px solid color-mix(in srgb,var(--gold) 20%,var(--line));border-radius:24px;padding:28px;margin:20px 0;box-shadow:0 14px 38px #101b2510;background:linear-gradient(145deg,#fff,#fffdf8)}
-h2{font-size:23px;letter-spacing:-.025em}
+/* Full premium fintech interface: emerald, charcoal and gold */
+:root{--navy:#f4e5bd;--blue:#d2a94d;--gold:#e6c36d;--paper:#07130f;--ink:#f4f0e5;--muted:#a6b4a9;--line:#294236;--card:#10231a;--soft:#1a3427;--shadow:0 18px 45px #0006}
+body{background:radial-gradient(ellipse at 50% -15%,#254b35 0%,#0a1711 48%,#050b08 100%);color:#f4f0e5;letter-spacing:-.01em}
+.shell{max-width:1080px;padding:22px 18px 70px}
+header{padding:10px 5px 20px;border-bottom:1px solid #b8954b55;margin-bottom:24px}
+.logo{width:60px;height:60px;border-radius:17px;box-shadow:0 8px 26px #0008}
+.brand{font-size:13px;letter-spacing:.19em;color:#f4d98a!important}.tagline{font-size:12px;color:#aebdaf}
+.hero{min-height:250px;padding:42px 40px;border:1px solid #d2ad5b88;border-radius:30px;background:radial-gradient(circle at 86% 24%,#3c6948 0%,transparent 31%),linear-gradient(125deg,#0d2117,#173c29 65%,#624a20)!important;box-shadow:0 24px 60px #0008}
+.hero:before{content:"";position:absolute;width:330px;height:330px;border:1px solid #f4d98a42;border-radius:50%;right:-75px;bottom:-250px;box-shadow:0 0 0 32px #ffffff08,0 0 0 65px #ffffff06}
+.hero:after{width:230px;height:230px;right:-80px;top:-130px;border-color:#f4d98a55}
+.eyebrow{font-size:11px;letter-spacing:.23em;color:#f3d68b}.hero h1{font-size:clamp(34px,6vw,52px);max-width:680px;color:#fff8e8;text-shadow:0 2px 22px #0008}.hero p{font-size:16px;color:#d6e0d4;max-width:570px}
+.panel{border:1px solid #b8954b55;border-radius:26px;padding:28px;margin:20px 0;background:linear-gradient(145deg,#14291e,#0c1c14);box-shadow:0 16px 42px #0006}
+h2{font-size:23px;letter-spacing:-.025em;color:#f2d88f!important}
+.muted{color:#a9b8ab}.field label,label{color:#d8d2bf}
 .stats{gap:14px;margin:22px 0}
-.stat{position:relative;overflow:hidden;min-height:112px;border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line));border-radius:20px;padding:19px;background:linear-gradient(145deg,#fff,#faf6eb);box-shadow:0 10px 25px #1b2b1d0d}
-.stat:after{content:"";position:absolute;width:76px;height:76px;border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);border-radius:50%;right:-25px;bottom:-34px}
-.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.09em;font-weight:750}
-.stat strong{display:block;margin-top:5px;font-size:clamp(23px,4vw,31px);font-weight:850;letter-spacing:-.035em}
-.goal{border:1px solid color-mix(in srgb,var(--gold) 30%,var(--line));border-radius:22px;padding:22px;margin:16px 0;background:linear-gradient(150deg,#fff 55%,#fbf7ed);box-shadow:0 12px 28px #1623190a}
-.goalhead strong{font-size:18px;letter-spacing:-.02em}
-.goalhead b{background:var(--soft);color:var(--navy);border:1px solid color-mix(in srgb,var(--gold) 30%,var(--line));border-radius:999px;padding:6px 12px;font-size:13px}
-.bar{height:12px;background:#e8e5dc;border-radius:99px;margin:16px 0}
-.bar i{border-radius:99px;box-shadow:0 0 12px color-mix(in srgb,var(--gold) 35%,transparent)}
-.daily-plan{padding:20px;border:1px solid color-mix(in srgb,var(--gold) 48%,var(--line));border-radius:20px;background:linear-gradient(145deg,#f8f0dc,#fffaf0)}
-.daily-amount{font-size:clamp(30px,5vw,38px);letter-spacing:-.04em;color:#624817}
-.daily-plan .muted{line-height:1.55}
-input,select{min-height:52px;border-radius:14px;border-color:#d7d6ce;background:#fff}
-input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 17%,transparent)}
-button{border-radius:14px;min-height:46px;font-weight:750;letter-spacing:.005em;box-shadow:0 5px 13px #142c4e10;transition:transform .15s ease,box-shadow .15s ease}
-button:active{transform:translateY(1px)}
-button.secondary{border:1px solid color-mix(in srgb,var(--gold) 28%,var(--line));box-shadow:none}
-button.gold{background:linear-gradient(135deg,#f5e8c7,#ead5a2);color:#5e4517}
-#addgoal{background:linear-gradient(120deg,#173e30,#b28a3b)!important;padding:14px 22px}
-#refresh{background:linear-gradient(135deg,#f6edda,#e9d7ad);color:#654c1e}
-.daily-wrap{margin-top:22px;padding-top:20px}
-.daily-title{font-size:16px;letter-spacing:-.015em}
-.day-cell{border-radius:12px;min-height:55px;border-color:#e2ded2}
-.day-cell.saved{background:#e9f1e9;border-color:#7b9b7d;color:#1d5138}
-@media(max-width:560px){
- .shell{padding:12px 12px 36px}.hero{min-height:210px;padding:29px 23px;border-radius:23px}.hero h1{font-size:34px}.panel{padding:20px;border-radius:21px}.stats{gap:8px}.stat{min-height:100px;padding:13px 11px;border-radius:16px}.stat span{font-size:10px;letter-spacing:.055em}.stat strong{font-size:21px}.goal{padding:16px;border-radius:19px}.daily-plan{padding:16px}.logo{width:50px;height:50px}
-}
+.stat{position:relative;overflow:hidden;min-height:122px;border:1px solid #c3a45b70;border-radius:22px;padding:20px;background:linear-gradient(145deg,#1c3928,#102319 78%);box-shadow:0 12px 32px #0005}
+.stat:after{content:"";position:absolute;width:92px;height:92px;border:1px solid #e6c36d55;border-radius:50%;right:-28px;bottom:-42px;box-shadow:0 0 0 12px #e6c36d0a}
+.stat span{display:block;color:#c0cabb;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
+.stat strong{display:block;margin-top:7px;font-size:clamp(24px,4vw,32px);font-weight:850;letter-spacing:-.04em;color:#f5d783!important}
+.goal{border:1px solid #b8954b66;border-radius:24px;padding:24px;margin:17px 0;background:linear-gradient(145deg,#193426,#0e2017 75%);box-shadow:0 14px 34px #0005}
+.goalhead strong{font-size:19px;color:#fff2d1;letter-spacing:-.02em}.goalhead b{background:#2a4934;color:#f6d989;border:1px solid #c7a65377;border-radius:999px;padding:7px 13px;font-size:13px}
+.bar{height:13px;background:#263b2d;border-radius:99px;margin:17px 0}.bar i{border-radius:99px;background:linear-gradient(90deg,#9e792e,#f1d37d)!important;box-shadow:0 0 16px #e5c36b55}
+.daily-plan{padding:22px;border:1px solid #e1bd68a8;border-radius:22px;background:linear-gradient(135deg,#263e2a,#182c1e 70%,#47371c);box-shadow:inset 0 1px #ffffff12}
+.daily-plan .muted{color:#d4d4bd;line-height:1.55}.daily-amount{font-size:clamp(31px,5vw,40px);letter-spacing:-.04em;color:#ffdf86}
+input,select{min-height:53px;border-radius:14px;border:1px solid #45614c;background:#091810;color:#f7f1df}
+input::placeholder{color:#829385}input:focus,select:focus{border-color:#e2c16e;box-shadow:0 0 0 4px #e2c16e24}
+button{border-radius:14px;min-height:47px;font-weight:800;letter-spacing:.005em;box-shadow:0 6px 16px #0004;transition:transform .15s ease,box-shadow .15s ease}
+button:not(.secondary):not(.gold):not(.danger):not(.swatch){background:linear-gradient(120deg,#a47b2c,#e4c36e)!important;color:#172317!important}
+button:active{transform:translateY(1px)}button.secondary{background:#203b2a!important;color:#f3d98d!important;border:1px solid #b8954b66;box-shadow:none}button.gold{background:linear-gradient(135deg,#f5e8c7,#d9b968)!important;color:#382a11!important}button.danger{background:#47221f!important;color:#ffd4c8!important}
+#addgoal{background:linear-gradient(120deg,#a47b2c,#e4c36e)!important;padding:14px 22px}#refresh{background:#203b2a!important;color:#f3d98d!important}
+.daily-wrap{margin-top:22px;padding-top:20px;border-top:1px solid #b8954b44}.daily-title{font-size:16px;letter-spacing:-.015em;color:#f2d88f}
+.day-head{color:#b4c2b3}.day-cell{border-radius:12px;min-height:55px;border-color:#385340;background:#102319;color:#eee5cf}.day-cell.saved{background:#25472e;border-color:#d0ad5c;color:#f9dc8b}.day-cell:disabled{opacity:.32}
+#auth .panel{background:#102319}
+footer{color:#92a495!important}
+@media(max-width:560px){.shell{padding:12px 12px 40px}.hero{min-height:220px;padding:30px 23px;border-radius:24px}.hero h1{font-size:35px}.panel{padding:20px;border-radius:22px}.stats{gap:8px}.stat{min-height:106px;padding:14px 11px;border-radius:17px}.stat span{font-size:9px;letter-spacing:.06em}.stat strong{font-size:21px}.goal{padding:17px;border-radius:20px}.daily-plan{padding:17px}.logo{width:51px;height:51px}}
 </style></head><body><main class="shell">
 <header><div class="identity"><img class="logo" src="./logo-mis-metas.svg" alt="Mis Metas de Ahorro"><div><div class="brand">MIS METAS DE AHORRO</div><div class="tagline">Construye hoy la tranquilidad de mañana.</div></div></div><div class="topactions"><button class="secondary" id="openSettings" type="button">Colores</button><button class="secondary hidden" id="logout" type="button">Salir</button></div></header>
 <section id="settings" class="panel hidden"><div class="goalhead"><h2>Apariencia</h2><button class="secondary" id="closeSettings" type="button">Cerrar</button></div><p class="muted">Elige una paleta o personaliza tu color principal.</p><div class="theme-row"><button class="swatch" style="background:#2864a0" data-color="#2864a0" aria-label="Azul"></button><button class="swatch" style="background:#247456" data-color="#247456" aria-label="Verde"></button><button class="swatch" style="background:#7652a5" data-color="#7652a5" aria-label="Morado"></button><button class="swatch" style="background:#263238" data-color="#263238" aria-label="Oscuro"></button><button class="swatch" style="background:#ad8735" data-color="#ad8735" aria-label="Dorado"></button><input id="customColor" class="custom" type="color" value="#2864a0" aria-label="Color personalizado"></div><p id="themeMsg" class="muted"></p><div class="daily-wrap"><div class="daily-title">Recordatorio diario de ahorro</div><p class="muted">Elige una hora para recibir el aviso cuando tengas la aplicación abierta.</p><div class="reminder-row"><label style="display:flex;align-items:center;gap:7px;margin:0"><input id="reminderEnabled" type="checkbox" style="width:auto"> Activar recordatorio</label><input id="reminderTime" type="time" value="19:00"><button id="saveReminder" type="button">Guardar recordatorio</button></div><p id="reminderMsg" class="muted"></p></div></section>
