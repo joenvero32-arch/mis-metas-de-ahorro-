@@ -1,10 +1,17 @@
 {
-  "name": "Mis metas de ahorro",
-  "short_name": "Mi Ahorro",
+  "name": "Mis Metas de Ahorro",
+  "short_name": "Mis Metas",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f6f8f5",
-  "theme_color": "#123c32",
+  "background_color": "#020806",
+  "theme_color": "#10241d",
   "description": "Organiza tus metas y aportes de ahorro.",
-  "icons": []
+  "icons": [
+    {
+      "src": "./logo-mis-metas.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
