@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10241d"/><stop offset="1" stop-color="#020806"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a5"/><stop offset=".35" stop-color="#e8b947"/><stop offset=".7" stop-color="#a96b12"/><stop offset="1" stop-color="#ffdf75"/></linearGradient>
+ <linearGradient id="coin" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff1b0"/><stop offset="1" stop-color="#bd811e"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+</defs>
+<rect x="8" y="8" width="496" height="496" rx="88" fill="url(#bg)" stroke="url(#gold)" stroke-width="8"/>
+<rect x="20" y="20" width="472" height="472" rx="78" fill="none" stroke="#f8d77b" stroke-opacity=".35" stroke-width="2"/>
+<!-- growth chart -->
+<g fill="url(#gold)" opacity=".8"><rect x="350" y="240" width="34" height="102" rx="6"/><rect x="394" y="205" width="34" height="137" rx="6"/><rect x="438" y="165" width="34" height="177" rx="6"/></g>
+<path d="M345 225 Q390 190 455 105" fill="none" stroke="#ffdf78" stroke-width="10" stroke-linecap="round"/><path d="M424 105h32v32" fill="none" stroke="#ffdf78" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- coins -->
+<g fill="url(#gold)" stroke="#ffe59a" stroke-width="3"><ellipse cx="92" cy="300" rx="48" ry="14"/><path d="M44 300v22c0 8 22 15 48 15s48-7 48-15v-22c0 8-22 15-48 15s-48-7-48-15z"/><ellipse cx="92" cy="278" rx="48" ry="14"/><path d="M44 278v22c0 8 22 15 48 15s48-7 48-15v-22c0 8-22 15-48 15s-48-7-48-15z"/><ellipse cx="92" cy="256" rx="48" ry="14"/></g>
+<!-- pig shadow and body -->
+<ellipse cx="254" cy="357" rx="128" ry="20" fill="#000" opacity=".55" filter="url(#shadow)"/>
+<g fill="url(#gold)" stroke="#ffdf83" stroke-width="4" stroke-linejoin="round">
+ <path d="M164 245 Q139 208 153 177 Q186 183 204 219 Q249 193 303 213 Q351 230 366 276 Q386 333 337 365 Q290 397 213 374 Q164 359 148 318 Q135 281 164 245z"/>
+ <path d="M190 220 Q172 164 207 150 Q237 164 237 217z"/>
+ <path d="M287 214 Q307 161 344 173 Q360 203 338 240z"/>
+ <path d="M178 350 Q164 391 194 392 Q218 390 211 365z"/>
+ <path d="M300 367 Q298 400 328 394 Q346 387 333 354z"/>
+ <ellipse cx="351" cy="294" rx="40" ry="29"/>
+</g>
+<g fill="#38240b"><ellipse cx="337" cy="291" rx="5" ry="8"/><ellipse cx="365" cy="291" rx="5" ry="8"/><path d="M246 266q10-12 20 0" fill="none" stroke="#38240b" stroke-width="5" stroke-linecap="round"/></g>
+<!-- slot and coin -->
+<path d="M232 214h54" stroke="#4c310d" stroke-width="8" stroke-linecap="round"/>
+<circle cx="258" cy="145" r="39" fill="url(#coin)" stroke="#fff0a5" stroke-width="4"/><circle cx="258" cy="145" r="31" fill="none" stroke="#9b6515" stroke-width="2"/><path d="M258 122v46m-12-34h20q12 0 12 10t-12 10h-20" fill="none" stroke="#8a5911" stroke-width="6" stroke-linecap="round"/>
+<!-- label -->
+<text x="256" y="438" text-anchor="middle" font-family="Arial,sans-serif" font-size="44" font-weight="800" fill="#fff">Mis <tspan fill="#f3c85e">Metas</tspan></text>
+<text x="256" y="474" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" letter-spacing="9" fill="#f3d987">DE AHORRO</text>
+</svg>
