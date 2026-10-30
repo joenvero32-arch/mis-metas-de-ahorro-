@@ -191,6 +191,41 @@ body.picker-open{overflow:hidden}
 
 .money-input{font-variant-numeric:tabular-nums;letter-spacing:.025em}
 .money-input::placeholder{letter-spacing:0}
+
+/* Corrección de diseño adaptable para móviles: evita columnas estrechas y recortes */
+html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
+body{margin:0}
+.shell{width:100%;max-width:1080px;min-width:0;margin-left:auto;margin-right:auto}
+header,.identity,.topactions,.hero,.panel,.goal,.daily-plan,.stats,.stat{min-width:0;max-width:100%}
+.identity{flex:1 1 220px}
+.brand,.tagline,.hero h1,.hero p{overflow-wrap:anywhere;word-break:normal}
+.hero h1{width:100%;max-width:100%;white-space:normal}
+.hero p{width:100%}
+.grid>*{min-width:0}
+input,select,button{max-width:100%}
+@media(max-width:760px){
+ .shell{width:100%;padding-left:14px;padding-right:14px}
+ header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+ .identity{flex:1 1 100%;width:100%}
+ .topactions{display:flex;flex:1 1 100%;width:100%;justify-content:flex-start;flex-wrap:wrap}
+ .hero{width:100%;padding:28px 22px}
+ .hero h1{font-size:clamp(29px,8vw,40px);line-height:1.12;letter-spacing:-.025em}
+ .panel{width:100%;padding:19px}
+ .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .stat{padding:12px 9px}
+ .stat strong{font-size:clamp(17px,4.5vw,23px);overflow-wrap:anywhere}
+ .goal{width:100%;padding:17px}
+ .daily-grid{grid-template-columns:repeat(7,minmax(0,1fr))}
+}
+@media(max-width:380px){
+ .shell{padding-left:10px;padding-right:10px}
+ .hero{padding:24px 17px}
+ .hero h1{font-size:29px}
+ .stats{gap:6px}
+ .stat span{font-size:8px}
+ .stat strong{font-size:16px}
+}
+
 </style></head><body><main class="shell">
 <header><div class="identity"><img class="logo" src="./logo-mis-metas.svg" alt="Mis Metas de Ahorro"><div><div class="brand">MIS METAS DE AHORRO</div><div class="tagline">Construye hoy la tranquilidad de mañana.</div></div></div><div class="topactions"><button class="secondary settings-button" id="openSettings" type="button" aria-label="Abrir configuración"><span aria-hidden="true">⚙</span> Configuración</button><button class="secondary hidden" id="logout" type="button">Salir</button></div></header>
 <section id="settings" class="panel hidden"><div class="goalhead"><h2>Apariencia</h2><button class="secondary" id="closeSettings" type="button">Cerrar</button></div><p class="muted">Elige una paleta o personaliza tu color principal.</p><div class="theme-row"><button class="swatch" style="background:#2864a0" data-color="#2864a0" aria-label="Azul"></button><button class="swatch" style="background:#247456" data-color="#247456" aria-label="Verde"></button><button class="swatch" style="background:#7652a5" data-color="#7652a5" aria-label="Morado"></button><button class="swatch" style="background:#263238" data-color="#263238" aria-label="Oscuro"></button><button class="swatch" style="background:#ad8735" data-color="#ad8735" aria-label="Dorado"></button><button class="swatch" style="background:#d45b91" data-color="#d45b91" aria-label="Rosado"></button><input id="customColor" class="custom" type="color" value="#2864a0" aria-label="Color personalizado"></div><p id="themeMsg" class="muted"></p><div class="daily-wrap"><div class="daily-title">Estilo de gráficas de progreso</div><p class="muted">Elige cómo quieres ver el avance de tus metas en la pantalla principal.</p><select id="graphStyle" class="native-graph-value" aria-hidden="true" tabindex="-1"><option value="circle">Circular elegante</option><option value="dots">Puntos luminosos</option><option value="squares">Cuadros de progreso</option><option value="bar">Barra horizontal</option><option value="peaks">Picos y montañas</option></select><button type="button" id="openGraphPicker" class="goal-picker-trigger graph-trigger"><span class="picker-icon">◉</span><span><small>DISEÑO DE TUS INDICADORES</small><strong id="graphPickerValue">Circular elegante</strong></span><span class="picker-chevron">⌄</span></button><div id="graphPicker" class="goal-picker hidden"><div class="goal-picker-backdrop" id="closeGraphPicker"></div><div class="goal-picker-sheet graph-sheet"><div class="picker-handle"></div><div class="picker-heading"><div><small>PERSONALIZA TU PANEL</small><h3>Estilo de gráficas</h3><p>Elige cómo quieres visualizar tu progreso</p></div><button type="button" id="dismissGraphPicker" aria-label="Cerrar">×</button></div><div class="graph-picker-options"><button type="button" data-graph="circle"><span>◉</span><b>Circular elegante</b><small>Un anillo de progreso</small></button><button type="button" data-graph="dots"><span>⠿</span><b>Puntos luminosos</b><small>Avance en pequeños pasos</small></button><button type="button" data-graph="squares"><span>▦</span><b>Cuadros de progreso</b><small>Bloques que se completan</small></button><button type="button" data-graph="bar"><span>▰</span><b>Barra horizontal</b><small>Una línea de avance</small></button><button type="button" data-graph="peaks"><span>⌁</span><b>Picos y montañas</b><small>Una curva de crecimiento</small></button></div></div></div><div id="graphPreview" class="graph-preview"></div></div><div class="daily-wrap"><div class="daily-title">Recordatorio diario de ahorro</div><p class="muted">Elige una hora para recibir el aviso cuando tengas la aplicación abierta.</p><div class="reminder-row"><label style="display:flex;align-items:center;gap:7px;margin:0"><input id="reminderEnabled" type="checkbox" style="width:auto"> Activar recordatorio</label><input id="reminderTime" class="native-time-value" type="time" value="19:00" aria-hidden="true" tabindex="-1"><button type="button" id="openTimePicker" class="goal-picker-trigger time-trigger"><span class="picker-icon">◷</span><span><small>HORA DEL RECORDATORIO</small><strong id="timePickerValue">7:00 p. m.</strong></span><span class="picker-chevron">⌄</span></button><div id="timePicker" class="goal-picker hidden"><div class="goal-picker-backdrop" id="closeTimePicker"></div><div class="goal-picker-sheet time-sheet"><div class="picker-handle"></div><div class="picker-heading"><div><small>RECORDATORIO PERSONAL</small><h3>¿A qué hora te avisamos?</h3><p>Elige el momento ideal para tu ahorro diario</p></div><button type="button" id="dismissTimePicker" aria-label="Cerrar">×</button></div><div class="time-adjust"><div><small>HORA</small><div class="time-step"><button type="button" id="hourDown">−</button><strong id="timeHour">07</strong><button type="button" id="hourUp">+</button></div></div><span class="time-colon">:</span><div><small>MINUTOS</small><div class="time-step"><button type="button" id="minuteDown">−</button><strong id="timeMinute">00</strong><button type="button" id="minuteUp">+</button></div></div></div><div class="time-period"><button type="button" data-period="AM">A. M.</button><button type="button" data-period="PM">P. M.</button></div><div class="date-picker-actions"><button type="button" class="secondary" id="cancelTimePicker">Cancelar</button><button type="button" id="confirmTimePicker">Confirmar hora</button></div></div></div><button id="saveReminder" type="button">Guardar recordatorio</button></div><p id="reminderMsg" class="muted"></p></div></section>
